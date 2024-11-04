@@ -13,7 +13,8 @@ namespace Software_Project
 {
     public partial class Form1 : Form
     {
-        private Rectangle buttonsize;
+        private Rectangle button_original_rectangle;
+        private Rectangle original_form_size;
 
         public Form1()
         {
@@ -22,6 +23,8 @@ namespace Software_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            original_form_size = new Rectangle(this.Location.X,this.Location.Y, this.Width,this.Height);
+            button_original_rectangle = new Rectangle(button1.Location.X,button1.Location.Y,button1.Width,button1.Height);
 
         }
 
@@ -67,7 +70,25 @@ namespace Software_Project
 
         private void button4_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Register");
+        }
+        private void resize_math(Rectangle r, Control c) 
+        {
+            float x_ratio = (float)(this.Width) / (float)(original_form_size.Width);
+            float y_ratio = (float)(this.Height)/ (float)(original_form_size.Height);
 
-        }        
+            int new_x = (int)(r.Width * x_ratio);
+            int new_y = (int)(r.Height * y_ratio);
+
+            int new_width = (int)(r.Width * x_ratio);
+            int new_height = (int)(r.Height * y_ratio);
+
+            c.Location = new Point(new_x, new_y);
+            c.Size = new Size(new_width, new_height);  
+        }
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            resize_math(button_original_rectangle, button1);
+        }
     }
 }
