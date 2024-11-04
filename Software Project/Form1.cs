@@ -15,6 +15,7 @@ namespace Software_Project
     {
         private Rectangle button_original_rectangle;
         private Rectangle original_form_size;
+        Request_Event re= new Request_Event();
 
         public Form1()
         {
@@ -70,7 +71,7 @@ namespace Software_Project
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Register");
+            re.Show();
         }
         private void resize_math(Rectangle r, Control c) 
         {
