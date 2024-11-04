@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace Software_Project
 {
     public partial class Form1 : Form
     {
+        private Rectangle buttonsize;
+
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +32,7 @@ namespace Software_Project
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -51,5 +54,20 @@ namespace Software_Project
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }        
     }
 }
